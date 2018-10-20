@@ -1,0 +1,26 @@
+{
+  "name": "bootstrap-site-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdziadkowiec95/bootstrap-site-1.git"
+  },
+  "author": "M.Dz.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdziadkowiec95/bootstrap-site-1/issues"
+  },
+  "homepage": "https://github.com/mdziadkowiec95/bootstrap-site-1#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2"
+  }
+}
