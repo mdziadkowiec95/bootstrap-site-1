@@ -8642,5 +8642,11 @@ a.text-dark:hover, a.text-dark:focus {
   overflow: visible;
   clip: auto; }
 
-body {
-  background-color: #eee !important; }
+.navbar {
+  background-color: rgba(50, 50, 50, 0.7); }
+  .navbar-toggler:focus {
+    outline: 0; }
+
+.nav-link {
+  display: block;
+  text-align: center; }
