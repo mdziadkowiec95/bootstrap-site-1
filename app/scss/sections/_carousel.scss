@@ -1,0 +1,36 @@
+.carousel {
+  &-inner {
+
+  }
+  &-control-icon {
+    padding: 1rem;
+    transition: all .2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &-item {
+    position: relative;
+    height: 100vh; 
+    min-height: 600px; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    transition-duration: 1.5s;
+  }
+
+  &-caption {
+    top: 50%;  
+    bottom: auto;
+    transform: translate(0, -50%);
+  }
+
+  &-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(25, 42, 86, 0.8), rgba(255, 255, 255, 0.5));
+    transition: all 0.3s linear;
+  }
+}

@@ -1,6 +1,15 @@
 .navbar {
-  background-color: rgba(50, 50, 50, 0.7);
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
 
+  @include media-breakpoint-up(sm) {
+    position: absolute;
+  }
+  
   &-toggler {
     
     &:focus {
@@ -12,4 +21,31 @@
 .nav-link {
   display: block;
   text-align: center;
+}
+
+.dropdown {
+  
+  &-menu {
+    opacity: 0;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
+
+
+//dropdown animation
+
+.show > .dropdown-menu {
+  max-height: 800px;
+  visibility: visible;
+}
+  
+.dropdown-menu {
+  display: block;
+  max-height: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
 }

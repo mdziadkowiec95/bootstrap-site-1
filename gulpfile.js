@@ -6,6 +6,7 @@ var browserSync = require('browser-sync');
 var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
+var cssnano = require('gulp-cssnano');
 
 gulp.task('sass', function () {
   return gulp.src('app/scss/**/*.scss')
@@ -37,6 +38,7 @@ gulp.task('useref', function () {
   return gulp.src('app/*.html') // scan html's
     .pipe(useref())  // szukaj komentarza build
     // Minifies only if it's a JavaScript file
-    .pipe(gulpIf('*.js', uglify())) // jeśli plik ma rozszerzenie JS to go minifikuj
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist')) // wyrzuć go w 'dist'
 });
