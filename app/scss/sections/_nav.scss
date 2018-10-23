@@ -9,6 +9,17 @@
   @include media-breakpoint-up(sm) {
     position: absolute;
   }
+
+  &-brand {
+    &__image {
+      transition: transform 0.2s ease-in;
+
+      &:hover,
+      &:focus {
+        transform: scale(0.95) translateY(-5px);
+      }
+    }
+  }
   
   &-toggler {
     
@@ -33,7 +44,6 @@
     }
   }
 }
-
 
 //dropdown animation
 
