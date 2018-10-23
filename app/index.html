@@ -20,10 +20,11 @@
 
   <main role="main">
     <header class="header">
+      <!-- NAVBAR -->
       <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="images/brand-logo.png" alt="carFix logo" class="navbar-brand__image">
+            <img src="images/brand-logo-170-cut.png" alt="carFix logo" class="navbar-brand__image">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -39,13 +40,10 @@
                 <a class="nav-link" href="#">O nas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="uslugi.html">Usługi</a>
+                <a class="nav-link" href="uslugi.html">Usługi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Promocje</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Kontakt</a>
+                <a class="nav-link" href="#">Promocje</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -56,10 +54,17 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Kontakt</a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
+
+      <!-- NAVBAR end -->
+
+      <!-- SLIDER -->
       <div id="carouselIndicators" class="carousel carousel-fullscreen carousel-fade slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
@@ -70,25 +75,22 @@
           <div class="carousel-item active" style="background-image: url('images/hero-carousel-1.jpg');">
             <div class="carousel-overlay"></div>
             <div class="carousel-caption">
-              <h1 class="display-4 font-weight-light">Twoj samochód w najlepszych rękach!</h1>
-              <p class="h4 font-weight-light">This is a demo for the <a href="https://bootstrapious.com/p/bootstrap-carousel"
-                  class="text-white">Bootstrap Carousel Guide</a> by <a href="https://bootstrapious.com" class="text-white">Bootstrapious.com</a>.</p>
+              <h1 class="carousel-caption__heading">Twoj samochód w najlepszych rękach!</h1>
+              <p class="carousel-caption__description">W naszym zespole znajdują się tylko dońwiadczeni fachowcy.</p>
             </div>
           </div>
           <div class="carousel-item" style="background-image: url('images/hero-carousel-2.jpg');">
             <div class="carousel-overlay"></div>
             <div class="carousel-caption">
-              <h1 class="display-4 font-weight-light">Doświadczeni fachowcy</h1>
-              <p class="h4 font-weight-light">This is a demo for the <a href="https://bootstrapious.com/p/bootstrap-carousel"
-                  class="text-white">Bootstrap Carousel Guide</a> by <a href="https://bootstrapious.com" class="text-white">Bootstrapious.com</a>.</p>
+              <h1 class="carousel-caption__heading">Kompleksowe Usługi</h1>
+              <p class="carousel-caption__description">W naszej ofercie na pewno znajdziesz to czego potrzebujesz,</p>
             </div>
           </div>
           <div class="carousel-item" style="background-image: url('images/hero-carousel-3.jpg');">
             <div class="carousel-overlay"></div>
             <div class="carousel-caption">
-              <h1 class="display-4 font-weight-light">Zawsze na czas!</h1>
-              <p class="h4 font-weight-light">This is a demo for the <a href="https://bootstrapious.com/p/bootstrap-carousel"
-                  class="text-white">Bootstrap Carousel Guide</a> by <a href="https://bootstrapious.com" class="text-white">Bootstrapious.com</a>.</p>
+              <h1 class="carousel-caption__heading">Zawsze na czas!</h1>
+              <p class="carousel-caption__description">Nasz rzetelność potwierdzona przez setki klientów.</p>
             </div>
           </div>
         </div>
@@ -101,16 +103,46 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <!-- SLIDER end -->
     </header>
 
 
+    <section class="why-us">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="section-heading">DLACZEGO MY?</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <i class="reasons__icon fa fa-star" aria-hidden="true"></i>
+            <h3 class="reasons__heading">Gwarancja jakości</h3>
+            <p class="reasons__paragraph">Jesteśmy pewni co do jakości naszych usług, jednak eśli nie będziesz zadowolony
+              z naszych usług to nie poniesiesz związanych z nią kosztów.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <i class="reasons__icon fa fa-star" aria-hidden="true"></i>
+            <h3 class="reasons__heading">Gwarancja jakości</h3>
+            <p class="reasons__paragraph">Jesteśmy pewni co do jakości naszych usług, jednak eśli nie będziesz zadowolony
+              z naszych usług to nie poniesiesz związanych z nią kosztów.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <i class="reasons__icon fa fa-star" aria-hidden="true"></i>
+            <h3 class="reasons__heading">Gwarancja jakości</h3>
+            <p class="reasons__paragraph">Jesteśmy pewni co do jakości naszych usług, jednak eśli nie będziesz zadowolony
+              z naszych usług to nie poniesiesz związanych z nią kosztów.
+            </p>
+          </div>
+        </div>
 
-    <div class="starter-template">
-      <h1>Bootstrap starter template</h1>
-      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly
-        barebones HTML document.</p>
-    </div>
-    <i class="fa fa-twitter" aria-hidden="true"></i>
+
+      </div>
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+    </section>
+
 
 
   </main><!-- /.container -->

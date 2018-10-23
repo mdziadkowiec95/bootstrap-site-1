@@ -24,6 +24,20 @@
     top: 50%;  
     bottom: auto;
     transform: translate(0, -50%);
+
+    &__heading {
+      font-family: 'Lato', sans-serif;
+      font-size: 3.3rem;
+      font-weight: 300;
+    }
+
+    &__description {
+      font-family: 'Martel-sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba($white, 0.7);
+    }
   }
 
   &-overlay {
