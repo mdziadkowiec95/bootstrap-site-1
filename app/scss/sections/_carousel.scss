@@ -1,4 +1,6 @@
 .carousel {
+  animation: fadeIn 2s ease-in-out;
+
   &-inner {
 
   }
@@ -24,6 +26,7 @@
     top: 50%;  
     bottom: auto;
     transform: translate(0, -50%);
+    animation: captionSlideIn 4s ease-in;
 
     &__heading {
       font-family: 'Lato', sans-serif;
@@ -44,7 +47,30 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(25, 42, 86, 0.9), rgba(255, 255, 255, 0.7));
+    background-image: linear-gradient(to bottom, rgba(25, 42, 86, 0.9), rgba(58, 12, 12, 0.5));
     transition: all 0.3s linear;
   }
+}
+
+@keyframes captionSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-700px);
+  }
+  45% {
+    transform: translateY(-50%);
+  }
+  70% {
+    transform: translateY(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
