@@ -16,3 +16,5 @@ $(".carousel").on("touchstart", function (event) {
     $(this).off("touchmove");
   });
 });
+
+

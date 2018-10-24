@@ -11,10 +11,14 @@
   <link rel="stylesheet" href="css/app.css">
   <!--endbuild-->
 
-
+  <script>
+    window.onload = function () {
+      document.body.classList.remove('fade-out');
+    };
+  </script>
 </head>
 
-<body>
+<body class="fade-out">
 
 
 
@@ -60,7 +64,7 @@
           </div>
         </div>
       </nav>
-      <div id="carouselIndicators" class="carousel carousel-fullscreen carousel-fade slide" data-ride="carousel">
+      <!-- <div id="carouselIndicators" class="carousel carousel-fullscreen carousel-fade slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselIndicators" data-slide-to="1"></li>
@@ -100,7 +104,7 @@
           <span class="carousel-control-icon carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div> -->
     </header>
 
 
