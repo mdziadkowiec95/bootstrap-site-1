@@ -8,18 +8,21 @@
   <title>Bootstrap based site vol. 1</title>
 
   <!--build:css css/app.min.css-->
+
+  <!-- animsition.css -->
+  <link rel="stylesheet" href="js/lib/animsition/animsition.min.css">
+
   <link rel="stylesheet" href="css/app.css">
   <!--endbuild-->
 
-  <script>
-
+  <!-- <script>
     window.onload = function () {
       document.body.classList.remove('fade-out');
     };
-  </script>
+  </script> -->
 </head>
 
-<body class="fade-out">
+<body class="animsition">
 
 
 
@@ -39,16 +42,16 @@
           <div class="collapse navbar-collapse navbar-dark" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
+                <a class="nav-link animsition-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">O nas</a>
+                <a class="nav-link animsition-link" href="#">O nas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="uslugi.html">Usługi</a>
+                <a class="nav-link animsition-link" href="uslugi.html">Usługi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Promocje</a>
+                <a class="nav-link animsition-link" href="#">Promocje</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -60,7 +63,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Kontakt</a>
+                <a class="nav-link animsition-link" href="#">Kontakt</a>
               </li>
             </ul>
           </div>
@@ -157,8 +160,12 @@
   </main><!-- /.container -->
 
   <!--build:js js/main.min.js -->
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- animsition.js -->
+  <script src="js/lib/animsition/animsition.min.js"></script>
 
-  <script src="js/lib/jquery.js"></script>
+  <!-- <script src="js/lib/jquery.js"></script> -->
   <script src="js/lib/bootstrap.js"></script>
   <script src="js/main.js"></script>
 

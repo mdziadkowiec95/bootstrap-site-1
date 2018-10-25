@@ -8650,14 +8650,6 @@ html {
     html {
       font-size: 1rem; } }
 
-body {
-  opacity: 1;
-  transition: 1s opacity; }
-
-body.fade-out {
-  opacity: 0;
-  transition: none; }
-
 .section-heading {
   text-align: center;
   padding: 2rem 0; }

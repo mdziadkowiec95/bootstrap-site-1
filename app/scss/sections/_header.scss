@@ -2,14 +2,14 @@
   position: relative;
   
   &__arrow-down {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 5rem;
-  color: $white;
-  z-index: 2000;
-  animation: pulse 2s ease-in-out 0.5s infinite;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    color: $white;
+    z-index: 2000;
+    animation: pulse 2s ease-in-out 0.5s infinite;
   }
   
   }
