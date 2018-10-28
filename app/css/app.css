@@ -8650,12 +8650,20 @@ html {
     html {
       font-size: 1rem; } }
 
+body {
+  opacity: 1;
+  transition: .5s opacity; }
+
+body.fade-out {
+  opacity: 0;
+  transition: none; }
+
 .section-heading {
   text-align: center;
   padding: 2rem 0; }
 
 .navbar {
-  background-color: rgba(31, 43, 79, 0.8);
+  background-color: #1f2b4f;
   position: fixed;
   top: 0;
   left: 0;
@@ -8720,6 +8728,14 @@ html {
     color: rgba(255, 255, 255, 0.7);
     transform: scale(1) translateX(-50%); } }
 
+.carousel-inner {
+  position: relative;
+  height: 100vh;
+  min-height: 600px; }
+  @media (min-width: 576px) {
+    .carousel-inner {
+      height: 60vh; } }
+
 .carousel-control-icon {
   padding: 1rem;
   transition: all .2s; }
@@ -8734,6 +8750,9 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   transition-duration: 1.5s; }
+  @media (min-width: 576px) {
+    .carousel-item {
+      height: 60vh; } }
 
 .carousel-caption {
   top: 50%;
@@ -8770,10 +8789,15 @@ html {
     opacity: 1;
     transform: translateY(-50%); } }
 
-.reasons__icon {
-  font-size: 4rem;
-  color: #1d3163; }
+.reasons__image {
+  display: block;
+  max-width: 100px;
+  margin: 0 auto 1rem auto; }
 
 .reasons__heading {
   font-size: 1.5rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-align: center; }
+
+.reasons__paragraph {
+  text-align: justify; }
