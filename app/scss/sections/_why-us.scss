@@ -1,4 +1,8 @@
 
+.why-us {
+  @include section-padding();
+}
+
 .reasons {
 
   &__image {

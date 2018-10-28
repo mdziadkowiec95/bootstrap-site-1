@@ -1,0 +1,44 @@
+.services {
+  
+
+  background: linear-gradient(to bottom, rgba($black, 0.6), rgba($black, 0.5)), url(../../images/services.jpeg) center no-repeat;
+    background-size: cover;
+
+    @include media-breakpoint-up(md) {
+      @include section-padding(3rem);
+      
+      background: none;
+    }
+
+
+  &__image {
+    @include media-breakpoint-up(md) {
+      background: linear-gradient(to bottom, rgba($black, 0.6), rgba($black, 0.5)), url(../../images/services.jpeg) center no-repeat;
+    background-size: cover;
+    }
+  }
+
+  &__text {
+    background-color: rgba($black, 0.55);
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list-paragraph {
+    margin-left: 2rem;
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: #eee;
+  }
+
+  &__icon {
+    max-width: 70px;
+  }
+}
