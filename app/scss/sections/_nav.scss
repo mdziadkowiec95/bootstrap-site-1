@@ -5,14 +5,20 @@
   left: 0;
   right: 0;
   z-index: 1030;
+  padding: .3rem .3rem .3rem .3rem;
 
   @include media-breakpoint-up(md) {
     background-color: transparent;
     position: absolute;
+    padding: 1.4rem .3rem;
+  }
+
+  .navbar-collapse {
+    padding-bottom: 1rem;
   }
 
 
-  &-brand {
+  .navbar-brand {
     &__image {
       transition: all 0.2s ease-in;
 
