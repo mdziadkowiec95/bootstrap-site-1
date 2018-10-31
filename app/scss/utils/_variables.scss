@@ -40,7 +40,8 @@ $grays: map-merge(
 );
 
 $main: #192a56;
-$blue:    #007bff !default;
+$black: rgb(33, 33, 33);
+$blue:    #192a56;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
@@ -240,7 +241,7 @@ $component-active-bg:         theme-color("primary") !default;
 
 $caret-width:                 .3em !default;
 
-$transition-base:             all .2s ease-in-out !default;
+$transition-base:             all .25s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
 
@@ -593,8 +594,9 @@ $dropdown-divider-bg:               $gray-200 !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 
 $dropdown-link-color:               $gray-900 !default;
-$dropdown-link-hover-color:         darken($gray-900, 5%) !default;
-$dropdown-link-hover-bg:            $gray-100 !default;
+
+  $dropdown-link-hover-color:         $white;
+  $dropdown-link-hover-bg:            $black;
 
 $dropdown-link-active-color:        $component-active-color !default;
 $dropdown-link-active-bg:           $component-active-bg !default;

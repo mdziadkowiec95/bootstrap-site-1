@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba($dark-blue, 1);
+  background-color: $black;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,7 +16,6 @@
   .navbar-collapse {
     padding-bottom: 1rem;
   }
-
 
   .navbar-brand {
     &__image {
@@ -74,4 +73,8 @@
   visibility: hidden;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
+}
+
+.dropdown-item {
+  transition: $transition-base;
 }
