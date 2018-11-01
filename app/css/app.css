@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Martel+Sans:300,400,700");
+@import url(../../node_modules/flickity/dist/flickity.css);
 *,
 *::before,
 *::after {
@@ -6223,9 +6224,9 @@ body.fade-out {
   .why-us__heading {
     font-size: 2.5rem;
     font-family: 'Lato', sans-serif;
-    font-weight: 700;
+    font-weight: 300;
     text-align: center;
-    color: black;
+    color: #212121;
     padding: 2rem 0; }
 
 .reasons__image {
@@ -6248,7 +6249,7 @@ body.fade-out {
   .services__heading {
     font-size: 2.5rem;
     font-family: 'Lato', sans-serif;
-    font-weight: 700;
+    font-weight: 300;
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
     padding: 2rem 0; }
@@ -6268,6 +6269,7 @@ body.fade-out {
     margin-left: 2rem;
     font-size: 1.7rem;
     font-weight: 200;
+    line-height: 1.3;
     color: #eee; }
   .services__icon {
     max-width: 70px; }

@@ -3,10 +3,10 @@
   padding-bottom: $bottom;
 }
 
-@mixin section-heading($color: black) {
+@mixin section-heading($color: $black, $weight: 300) {
   font-size: 2.5rem;
   font-family: 'Lato', sans-serif;
-  font-weight: 700;
+  font-weight: $weight;
   text-align: center;
   color: $color;
   padding: 2rem 0;
