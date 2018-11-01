@@ -6269,9 +6269,10 @@ img {
 .nav-link {
   display: block;
   text-align: center;
-  transition: all .25s;
+  text-transform: uppercase;
+  font-weight: 300;
   position: relative;
-  transition: all .25s ease; }
+  transition: all .2s ease-in-out; }
   .nav-link::after {
     display: block;
     content: "";
