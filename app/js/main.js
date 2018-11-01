@@ -17,6 +17,9 @@ $(".carousel").on("touchstart", function (event) {
   });
 });
 
+
+// FLICKITY slider with brand logos
+
 var flky = new Flickity('.brands', {
   // options, defaults listed
 
@@ -26,7 +29,7 @@ var flky = new Flickity('.brands', {
   adaptiveHeight: false,
   // set carousel height to the selected slide
 
-  autoPlay: 2000,
+  autoPlay: 1500,
   // advances to the next cell
   // if true, default is 3 seconds
   // or set time between advances in milliseconds
@@ -75,10 +78,10 @@ var flky = new Flickity('.brands', {
   // Enable if items have percent widths
   // Disable if items have pixel widths, like images
 
-  prevNextButtons: true,
+  prevNextButtons: false,
   // creates and enables buttons to click to previous & next cells
 
-  pageDots: true,
+  pageDots: false,
   // create and enable page dots
 
   resize: true,
@@ -95,7 +98,7 @@ var flky = new Flickity('.brands', {
   // watches the content of :after of the element
   // activates if #element:after { content: 'flickity' }
 
-  wrapAround: false
+  wrapAround: true
   // at end of cells, wraps-around to first for infinite scrolling
 
 });
