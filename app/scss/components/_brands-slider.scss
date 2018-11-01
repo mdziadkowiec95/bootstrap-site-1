@@ -24,8 +24,16 @@
 
   &__item {
     height: 100%;
-    width: 33.333%;
+    width: 50%;
     display: inline-block;
+    
+    @include media-breakpoint-up(md) {
+      width: 100% / 3;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 25%;
+    }
   }
 
   &__image {
