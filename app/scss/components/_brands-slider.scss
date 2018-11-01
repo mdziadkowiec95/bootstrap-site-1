@@ -1,0 +1,29 @@
+.brands {
+  padding: 1rem 0;
+
+  &__heading {
+    @include section-heading();
+
+    font-size: 2rem;
+  }
+  &__carousel {
+    position: relative;
+    height: 200px;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($white, 0.2);
+    }
+  }
+
+  &__item {
+    height: 100%;
+    display: inline-block;
+  }
+}

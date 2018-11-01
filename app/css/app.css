@@ -3739,10 +3739,6 @@ a.text-dark:hover, a.text-dark:focus {
   color: #fff;
   text-align: center; }
 
-.brands {
-  overflow: hidden;
-  min-height: 200px; }
-
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -6085,6 +6081,32 @@ body {
 body.fade-out {
   opacity: 0;
   transition: none; }
+
+.brands {
+  padding: 1rem 0; }
+  .brands__heading {
+    font-size: 2.5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: #212121;
+    padding: 2rem 0;
+    font-size: 2rem; }
+  .brands__carousel {
+    position: relative;
+    height: 200px; }
+    .brands__carousel::after {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.2); }
+  .brands__item {
+    height: 100%;
+    display: inline-block; }
 
 .navbar {
   background-color: #212121;

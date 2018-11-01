@@ -22,10 +22,7 @@
 
 // @import '../../node_modules/flickity/dist/flickity.css';
 
-.brands {
-  overflow: hidden;
-  min-height: 200px;
-}
+
 
 @import '../../node_modules/font-awesome/scss/font-awesome';
 // @import '../node_modules/bootstrap/scss/bootstrap-compass';
@@ -34,6 +31,7 @@
 @import 'base/global';
 @import 'base/typography';
 @import 'utils/mixins';
+@import 'components/brands-slider';
 @import 'sections/nav';
 @import 'sections/header';
 @import 'sections/carousel';
