@@ -25,12 +25,12 @@ $('.brands__carousel').flickity({
   cellSelector: '.brands__item',
   wrapAround: true,
   pageDots: false,
-  autoPlay: 1000,
+  autoPlay: 2000,
   prevNextButtons: false,
   setGallerySize: false,
   cellAlign: 'left',
-  imagesLoaded: true
-
+  imagesLoaded: true,
+  draggable: false
 });
 
 // FLICKITY slider with brand logos

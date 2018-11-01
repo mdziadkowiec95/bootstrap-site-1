@@ -24,6 +24,12 @@
 
   &__item {
     height: 100%;
+    width: 33.333%;
     display: inline-block;
+  }
+
+  &__image {
+      display: block;
+      margin: auto;
   }
 }

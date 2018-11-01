@@ -4,6 +4,7 @@
   
   &__heading {
     @include section-heading(rgba($white, 0.9));
+    
   }
 
   &__text {
