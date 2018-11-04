@@ -6219,6 +6219,7 @@ img {
     font-size: 2rem; }
   .brands__carousel {
     position: relative;
+    overflow: hidden;
     height: 200px; }
     .brands__carousel::after {
       position: absolute;
@@ -6459,3 +6460,6 @@ img {
     color: #eee; }
   .services__icon {
     max-width: 70px; }
+
+.navbar-toggler .navbar-toggler-icon {
+  transition: all .3s; }

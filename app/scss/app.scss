@@ -38,4 +38,16 @@
 @import 'sections/why-us';
 @import 'sections/services';
 
+.navbar-toggler {
+
+  .navbar-toggler-icon {
+    transition: all .3s;
+  }
+  &.js-active {
+    .navbar-toggler-icon {
+
+    }
+  }
+}
+
 

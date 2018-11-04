@@ -1,3 +1,20 @@
+// navbar-toggler-icon customizing
+
+const navbarToggler = document.querySelector('.navbar-toggler');
+
+navbarToggler.addEventListener('click', function () {
+
+  if (navbarToggler.nextElementSibling.classList.contains('collapsing')) {
+    return false;
+  } else {
+    this.classList.toggle('js-active');
+  }
+
+});
+
+
+
+// Hero slider touch funcionality
 
 var touchSensitivity = 5;
 $(".carousel").on("touchstart", function (event) {
@@ -40,4 +57,6 @@ $('.brands__carousel').flickity({
   imagesLoaded: true,
   draggable: false
 });
+
+
 
