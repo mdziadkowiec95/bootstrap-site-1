@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Bootstrap based site vol. 1</title>
+
+  <!--build:css css/app.min.css-->
+
+  <link rel="stylesheet" href="css/app.css">
+  <!--endbuild-->
+
+  <script>
+    window.onload = function () {
+      document.body.classList.remove('fade-out');
+    };
+  </script>
+</head>
+
+<body class="fade-out">
+
+  <main role="main">
+    <header class="header">
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/brand-logo-170-cut.png" alt="carFix logo" class="navbar-brand__image">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <div class="navbar-toggler-icon">
+            </div>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-dark" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Strona główna<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">O nas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="uslugi.html">Usługi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Promocje</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">Partnerzy</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- NAVBAR end -->
+    </header>
+
+    <section class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <form class="contact-form" action="contactform.php" method="post">
+              <div class="form-group">
+                <label for="name">Imię i nazwisko</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Wpisz swoje Imię i nazwisko...">
+              </div>
+              <div class="form-group">
+                <label for="email">Twój adres email:</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Wpisz swój email...">
+              </div>
+              <div class="form-group">
+                <label for="subject">Temat:</label>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Temat?">
+              </div>
+              <div class="form-group">
+                <label for="hours">Preferowane godziny:</label>
+                <select class="form-control" id="hours">
+                  <option>6:00 - 10:00</option>
+                  <option>10:00 - 14:00</option>
+                  <option>14:00 - 18:00</option>
+                  <option>18:00 - 22:00</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Treść wiadomości:</label>
+                <textarea class="form-control" name="message" id="message" rows="4"></textarea>
+              </div>
+              <button type="submit" name="submit" class="btn btn-primary">Wyślij zapytanie</button>
+            </form>
+          </div>
+          <div class="col-md-6">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+        title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+        target="_blank">CC 3.0 BY</a></div>
+
+
+
+  </main><!-- /.container -->
+
+
+  <script src="js/lib/jquery.js"></script>
+  <script src="js/lib/bootstrap.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

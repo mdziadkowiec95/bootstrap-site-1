@@ -51,7 +51,12 @@ gulp.task('uncss', function () {
         'app/**/*.html'
       ],
       ignore: [/\w\.in/,
+        ".fade-out",
+        ".flickity-viewport",
+        ".flickity-slider",
+        ".flickity-enabled",
         ".fade",
+        ".is-selected",
         ".collapse",
         ".collapsing",
         /(#|\.)navbar(\-[a-zA-Z]+)?/,
@@ -118,10 +123,12 @@ gulp.task('replace-css-url', function () {
 });
 
 gulp.task('useref', function () {
-  return gulp.src('app/*.html') // scan html's
+  return gulp.src('app/index.html') // scan html's
     .pipe(useref())  // szukaj komentarza build
     // Minifies only if it's a JavaScript file
-    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('*.js', uglify().on('error', function (e) {
+      console.log(e);
+    })))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist')) // wyrzuć go w 'dist'
 });
@@ -137,6 +144,11 @@ gulp.task('images', function () {
 gulp.task('fonts', function () {
   return gulp.src('app/fonts/**/*')
     .pipe(gulp.dest('dist/fonts'))
+});
+
+gulp.task('php-mail', function () {
+  return gulp.src('app/contactform.php')
+    .pipe(gulp.dest('dist/'))
 });
 
 /** Configuration **/

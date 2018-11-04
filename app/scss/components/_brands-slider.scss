@@ -21,6 +21,10 @@
       width: 100%;
       background-color: rgba($white, 0.2);
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__item {
