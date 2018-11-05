@@ -1349,7 +1349,7 @@ img {
   text-align: justify; }
 
 .services {
-  background: linear-gradient(to bottom, rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3)), url(../../images/services.jpg) center no-repeat;
+  background: linear-gradient(to bottom, rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3)), url(../images/services.jpg) center no-repeat;
   background-size: cover; }
   .services__heading {
     font-size: 2.5rem;

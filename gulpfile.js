@@ -13,6 +13,10 @@ var cache = require('gulp-cache');
 var gutil = require('gulp-util')
 var ftp = require('vinyl-ftp');
 var replace = require('gulp-replace');
+var del = require('del');
+var runSequence = require('run-sequence');
+
+
 
 
 
@@ -46,6 +50,7 @@ gulp.task('uncss', function () {
   return gulp.src([
     'app/css/app.css'
   ])
+    .pipe(replace('../../images/', '../images/'))
     .pipe(uncss({
       html: [
         'app/**/*.html'
@@ -116,14 +121,14 @@ gulp.task('uncss', function () {
     .pipe(gulp.dest('app/css/'));
 });
 
-gulp.task('replace-css-url', function () {
-  return gulp.src('dist/css/app.min.css')
-    .pipe(replace('../../images/', '../images/'))
-    .pipe(gulp.dest('dist/css/'));
-});
+// gulp.task('replace-css-url', function () {
+//   return gulp.src('dist/css/app.min.css')
+//     .pipe(replace('../../images/', '../images/'))
+//     .pipe(gulp.dest('dist/css/'));
+// });
 
 gulp.task('useref', function () {
-  return gulp.src('app/index.html') // scan html's
+  return gulp.src('app/*.html') // scan html's
     .pipe(useref())  // szukaj komentarza build
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify().on('error', function (e) {
@@ -146,10 +151,24 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts'))
 });
 
-gulp.task('php-mail', function () {
+gulp.task('copy', function () {
   return gulp.src('app/contactform.php')
     .pipe(gulp.dest('dist/'))
 });
+
+gulp.task('clean:dist', function () {
+  return del.sync('dist');
+});
+
+
+gulp.task('build', function (callback) {
+  runSequence('clean:dist', 'sass', 'uncss', 'useref', 'images', 'fonts', 'copy',
+    callback
+  )
+})
+
+
+// Upload TASK
 
 /** Configuration **/
 var user = process.env.FTP_USER
