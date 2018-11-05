@@ -1008,6 +1008,119 @@ textarea.form-control {
 .form-group {
   margin-bottom: 1rem; }
 
+.was-validated .form-control:valid, .was-validated
+.custom-select:valid {
+  border-color: #28a745; }
+  .was-validated .form-control:valid:focus, .was-validated
+  .custom-select:valid:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
+  .was-validated .form-control:valid ~ .valid-feedback,
+  .was-validated .form-control:valid ~ .valid-tooltip,
+  .was-validated
+  .custom-select:valid ~ .valid-feedback,
+  .was-validated
+  .custom-select:valid ~ .valid-tooltip {
+    display: block; }
+
+.was-validated .form-control-file:valid ~ .valid-feedback,
+.was-validated .form-control-file:valid ~ .valid-tooltip {
+  display: block; }
+
+.was-validated .form-check-input:valid ~ .form-check-label {
+  color: #28a745; }
+
+.was-validated .form-check-input:valid ~ .valid-feedback,
+.was-validated .form-check-input:valid ~ .valid-tooltip {
+  display: block; }
+
+.was-validated .custom-control-input:valid ~ .custom-control-label {
+  color: #28a745; }
+  .was-validated .custom-control-input:valid ~ .custom-control-label::before {
+    background-color: #71dd8a; }
+
+.was-validated .custom-control-input:valid ~ .valid-feedback,
+.was-validated .custom-control-input:valid ~ .valid-tooltip {
+  display: block; }
+
+.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
+  background-color: #34ce57; }
+
+.was-validated .custom-control-input:valid:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
+
+.was-validated .custom-file-input:valid ~ .custom-file-label {
+  border-color: #28a745; }
+  .was-validated .custom-file-input:valid ~ .custom-file-label::after {
+    border-color: inherit; }
+
+.was-validated .custom-file-input:valid ~ .valid-feedback,
+.was-validated .custom-file-input:valid ~ .valid-tooltip {
+  display: block; }
+
+.was-validated .custom-file-input:valid:focus ~ .custom-file-label {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #c23616; }
+
+.was-validated .form-control:invalid, .was-validated
+.custom-select:invalid {
+  border-color: #c23616; }
+  .was-validated .form-control:invalid:focus, .was-validated
+  .custom-select:invalid:focus {
+    border-color: #c23616;
+    box-shadow: 0 0 0 0.2rem rgba(194, 54, 22, 0.25); }
+  .was-validated .form-control:invalid ~ .invalid-feedback,
+  .was-validated .form-control:invalid ~ .invalid-tooltip,
+  .was-validated
+  .custom-select:invalid ~ .invalid-feedback,
+  .was-validated
+  .custom-select:invalid ~ .invalid-tooltip {
+    display: block; }
+
+.was-validated .form-control-file:invalid ~ .invalid-feedback,
+.was-validated .form-control-file:invalid ~ .invalid-tooltip {
+  display: block; }
+
+.was-validated .form-check-input:invalid ~ .form-check-label {
+  color: #c23616; }
+
+.was-validated .form-check-input:invalid ~ .invalid-feedback,
+.was-validated .form-check-input:invalid ~ .invalid-tooltip {
+  display: block; }
+
+.was-validated .custom-control-input:invalid ~ .custom-control-label {
+  color: #c23616; }
+  .was-validated .custom-control-input:invalid ~ .custom-control-label::before {
+    background-color: #ee8269; }
+
+.was-validated .custom-control-input:invalid ~ .invalid-feedback,
+.was-validated .custom-control-input:invalid ~ .invalid-tooltip {
+  display: block; }
+
+.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
+  background-color: #e64925; }
+
+.was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(194, 54, 22, 0.25); }
+
+.was-validated .custom-file-input:invalid ~ .custom-file-label {
+  border-color: #c23616; }
+  .was-validated .custom-file-input:invalid ~ .custom-file-label::after {
+    border-color: inherit; }
+
+.was-validated .custom-file-input:invalid ~ .invalid-feedback,
+.was-validated .custom-file-input:invalid ~ .invalid-tooltip {
+  display: block; }
+
+.was-validated .custom-file-input:invalid:focus ~ .custom-file-label {
+  box-shadow: 0 0 0 0.2rem rgba(194, 54, 22, 0.25); }
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -1091,6 +1204,10 @@ body {
   opacity: 1;
   transition: .3s opacity; }
 
+body.fade-out {
+  opacity: 0;
+  transition: none; }
+
 img {
   max-width: 100%; }
 
@@ -1133,19 +1250,23 @@ img {
     display: block;
     margin: auto; }
 
+.map {
+  height: 100%; }
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1030;
   padding: .3rem .3rem .3rem .3rem;
   background-color: #212121;
   box-shadow: 0 1px 5px rgba(33, 33, 33, 0.5); }
   @media (min-width: 768px) {
     .navbar {
+      position: static;
       padding: .4rem .3rem; } }
   .navbar.front-page {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     background-color: #212121; }
     @media (min-width: 768px) {
       .navbar.front-page {

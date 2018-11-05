@@ -15,6 +15,8 @@ var ftp = require('vinyl-ftp');
 var replace = require('gulp-replace');
 var del = require('del');
 var runSequence = require('run-sequence');
+var rename = require('gulp-rename');
+// var extReplace = require('gulp-ext-replace');
 
 
 
@@ -56,6 +58,9 @@ gulp.task('uncss', function () {
         'app/**/*.html'
       ],
       ignore: [/\w\.in/,
+        ".was-validated",
+        /\:valid/,
+        /\:invalid/,
         ".fade-out",
         ".flickity-viewport",
         ".flickity-slider",
@@ -156,16 +161,21 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist/'))
 });
 
+gulp.task('copy-as-php', function () {
+  return gulp.src('dist/kontakt.html')
+    .pipe(rename('kontakt.php'))
+    .pipe(gulp.dest('dist/'))
+});
+
 gulp.task('clean:dist', function () {
   return del.sync('dist');
 });
 
-
 gulp.task('build', function (callback) {
-  runSequence('clean:dist', 'sass', 'uncss', 'useref', 'images', 'fonts', 'copy',
+  runSequence('clean:dist', 'sass', 'uncss', 'useref', 'images', 'fonts', 'copy', 'copy-as-php',
     callback
   )
-})
+});
 
 
 // Upload TASK
@@ -203,7 +213,7 @@ gulp.task('ftp-deploy', function () {
     .src(localFilesGlob, { base: './dist', buffer: false })
     .pipe(conn.newer(remoteFolder)) // only upload newer files
     .pipe(conn.dest(remoteFolder))
-})
+});
 
 /**
  * Watch deploy task.

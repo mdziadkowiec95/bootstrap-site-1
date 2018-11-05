@@ -59,23 +59,44 @@ $(document).ready(function () {
 
 
   // brands slider options 
-  // if (document.body.classList.contains('front-page')) {
+  if (document.body.classList.contains('front-page')) {
 
-  $('.brands__carousel').flickity({
-    cellSelector: '.brands__item',
-    wrapAround: true,
-    pageDots: false,
-    autoPlay: 2000,
-    prevNextButtons: false,
-    setGallerySize: false,
-    cellAlign: 'left',
-    imagesLoaded: true,
-    draggable: false
-  });
+    $('.brands__carousel').flickity({
+      cellSelector: '.brands__item',
+      wrapAround: true,
+      pageDots: false,
+      autoPlay: 2000,
+      prevNextButtons: false,
+      setGallerySize: false,
+      cellAlign: 'left',
+      imagesLoaded: true,
+      draggable: false
+    });
 
-  // }
+  }
 
 });
+
+
+// Maps settings
+
+var currentPageURL = window.location.pathname;
+var currentPageName = currentPageURL.substring(currentPageURL.lastIndexOf('/') + 1);
+
+if (currentPageName === "kontakt.php") {
+
+  var map = L.map('map').setView([50.069638, 19.943788], 25);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  L.marker([50.069638, 19.943788]).addTo(map)
+    .bindPopup('Serwis <strong>carFix</strong>')
+    .openPopup();
+
+}
+
 
 
 
