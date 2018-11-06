@@ -134,6 +134,7 @@ gulp.task('uncss', function () {
 
 gulp.task('useref', function () {
   return gulp.src('app/*.html') // scan html's
+    .pipe(replace('kontakt.html', 'kontakt.php'))
     .pipe(useref())  // szukaj komentarza build
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify().on('error', function (e) {

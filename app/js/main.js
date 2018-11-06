@@ -12,13 +12,7 @@ navbarToggler.addEventListener('click', function () {
 
 });
 
-
-
-
-
 // Scrool  
-
-
 
 
 // Brands carousel slider settings
@@ -83,7 +77,7 @@ $(document).ready(function () {
 var currentPageURL = window.location.pathname;
 var currentPageName = currentPageURL.substring(currentPageURL.lastIndexOf('/') + 1);
 
-if (currentPageName === "kontakt.php") {
+if ((currentPageName === "kontakt.php") || (currentPageName === "kontakt.html")) {
 
   var map = L.map('map').setView([50.069638, 19.943788], 25);
 

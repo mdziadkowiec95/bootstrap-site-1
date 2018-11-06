@@ -11,3 +11,24 @@
   color: $color;
   padding: 2rem 0;
 }
+
+@mixin fancy-line($left, $bottom, $height, $width, $bg: $yellow, $center: false) {
+  position: relative;
+  
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: $bottom;
+    height: $height;
+    width: $width;
+    background-color: $bg;
+
+    @if $center == true {
+      left: 50%;
+      transform: translateX(-50%);
+    } @else {
+      left: $left;
+    }
+  }
+}

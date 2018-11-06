@@ -1,0 +1,19 @@
+.contact-form {
+
+  &__heading {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: rgba($black, 0.8);
+    margin-bottom: 1rem;
+
+    @include fancy-line(0, -5px, 2px, 50px);
+  }
+
+  .form-control {
+    transition: all .3s ease;
+
+    &:focus:not(select) {
+      transform: scale(1.02);
+    }
+  }
+}

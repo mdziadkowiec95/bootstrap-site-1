@@ -1,3 +1,10 @@
 .contact {
   padding: 2rem;
+
+  &__heading {
+    color: red;
+    @include section-heading();
+
+    font-weight: 400;
+  }
 }
