@@ -1,6 +1,6 @@
 // navbar-toggler-icon customizing
 
-var navbarToggler = document.querySelector('.navbar-toggler');
+const navbarToggler = document.querySelector('.navbar-toggler');
 
 navbarToggler.addEventListener('click', function () {
 
@@ -12,7 +12,8 @@ navbarToggler.addEventListener('click', function () {
 
 });
 
-// Scrool  
+
+/* ---- FRONT-PAGE scripts ---- */
 
 
 // Brands carousel slider settings
@@ -40,8 +41,7 @@ $(document).ready(function () {
   });
 
 
-  // arrow down
-
+  // arrow-down animation
 
   $('.js-arrow-down').on('click', function () {
 
@@ -55,6 +55,25 @@ $(document).ready(function () {
   // brands slider options 
   if (document.body.classList.contains('front-page')) {
 
+    document.body.onscroll = sectionFadeIn;
+
+    function sectionFadeIn() {
+      const whyUs = document.querySelector('.why-us');
+      let whyUsOffset = whyUs.offsetTop;
+      const header = document.querySelector('.header');
+      let headerH = getComputedStyle(header).getPropertyValue('height');
+
+
+
+      if (((whyUsOffset < window.innerHeight) && (pageYOffset > 50)) ||
+        window.pageYOffset > (parseInt(headerH) * 0.6)) {
+
+        whyUs.classList.remove('fade-out');
+
+      }
+    }
+
+
     $('.brands__carousel').flickity({
       cellSelector: '.brands__item',
       wrapAround: true,
@@ -66,11 +85,21 @@ $(document).ready(function () {
       imagesLoaded: true,
       draggable: false
     });
-
   }
 
 });
 
+
+// OPTIONS scripts
+
+const $optionsButtons = $('.options__button');
+
+$optionsButtons.on('click', function () {
+  $(this).next().slideToggle(300);
+});
+
+
+/* ---- CONTACT-PAGE scripts ---- */
 
 // Maps settings
 

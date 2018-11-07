@@ -8,6 +8,10 @@
     @include media-breakpoint-up(sm) {
       height: 60vh;
     }
+
+    @include media-breakpoint-up(xl) {
+      height: 75vh;
+    }
   }
   &-control-icon {
     padding: 1rem;
@@ -28,6 +32,10 @@
 
     @include media-breakpoint-up(sm) {
       height: 60vh;
+    }
+
+    @include media-breakpoint-up(xl) {
+      height: 75vh;
     }
   }
 

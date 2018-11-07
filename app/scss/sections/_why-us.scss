@@ -2,6 +2,15 @@
 .why-us {
   @include section-padding();
 
+  transition: all 1s ease-in-out;
+  opacity: 1;
+  transform: scale(1) rotateX(360deg);
+
+  &.fade-out {
+    opacity: 0;
+    transform: scale(0.8) rotateX(310deg);
+  }
+
   &__heading {
     @include section-heading();
   }

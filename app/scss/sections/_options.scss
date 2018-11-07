@@ -1,0 +1,7 @@
+.options {
+  @include section-padding();
+
+  &__list {
+    display: none;
+  }
+}
