@@ -7397,7 +7397,13 @@ img {
   padding-top: 4rem;
   padding-bottom: 4rem; }
   .options__list {
-    display: none; }
+    max-height: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out; }
+    .options__list.js-show {
+      max-height: 100%;
+      box-shadow: 0 0 10px rgba(33, 33, 33, 0.5); }
 
 .contact {
   padding: 2rem; }

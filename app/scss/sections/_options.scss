@@ -2,6 +2,14 @@
   @include section-padding();
 
   &__list {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &.js-show {
+      max-height: 100%;
+      box-shadow: 0 0 10px rgba($black, 0.5);
+        }
   }
 }

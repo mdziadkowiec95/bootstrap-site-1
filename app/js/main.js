@@ -92,13 +92,14 @@ $(document).ready(function () {
 
 // OPTIONS scripts
 
-const $optionsButtons = $('.options__button');
+const optionButtons = document.querySelectorAll('.options__button');
 
-$optionsButtons.on('click', function () {
-  $(this).next().slideToggle(300);
-});
-
-
+for (let i = 0; i < optionButtons.length; i++) {
+  optionButtons[i].addEventListener('click', function (e) {
+    const clickedBtn = e.target;
+    clickedBtn.nextElementSibling.classList.toggle('js-show');
+  });
+}
 /* ---- CONTACT-PAGE scripts ---- */
 
 // Maps settings
