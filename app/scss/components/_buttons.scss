@@ -40,13 +40,34 @@
     border: none;
   }
 
-  &:active {
-    animation: btnFocus 0.3s ease;
+  &:active:not(.btn--header) {
+    animation: btnPush 0.3s ease;
+  }
+
+  &--header {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:active {
+      animation: btnHeaderPush 0.3s ease;
+    }
+  }
+
+  &--accordion {
+
   }
 }
 
-@keyframes btnFocus {
+@keyframes btnPush {
   0% { transform: scale(1); }
   55% { transform: scale(0.9); }
   100% { transform: scale(1); }
+}
+
+@keyframes btnHeaderPush {
+  0% { transform: translateX(-50%) scale(1); }
+  55% { transform: translateX(-50%) scale(0.9); }
+  100% { transform: translateX(-50%) scale(1); }
 }

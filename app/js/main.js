@@ -43,7 +43,7 @@ $(document).ready(function () {
 
   // arrow-down animation
 
-  $('.js-arrow-down').on('click', function () {
+  $('.btn--header').on('click', function () {
 
     $('html, body').animate({
       scrollTop: ($('.why-us').offset().top)
@@ -52,54 +52,58 @@ $(document).ready(function () {
   });
 
 
-  // brands slider options 
+  // Front Page Waypoint
+
   if (document.body.classList.contains('front-page')) {
 
-    document.body.onscroll = sectionFadeIn;
+    var waypoint = new Waypoint({
+      element: document.querySelector('.js-wp-1'),
+      handler: function (direction) {
+        const children = this.element.children;
+        console.log(children);
 
-    function sectionFadeIn() {
-      const whyUs = document.querySelector('.why-us');
-      let whyUsOffset = whyUs.offsetTop;
-      const header = document.querySelector('.header');
-      let headerH = getComputedStyle(header).getPropertyValue('height');
+        for (let i = 0; i < children.length; i++) {
+          setTimeout(function () {
+            children[i].className += ' is-visible';
+            console.log(i);
+          }, i * 700);
+        }
+      },
+      offset: '50%'
+    })
 
-
-
-      if (((whyUsOffset < window.innerHeight) && (pageYOffset > 50)) ||
-        window.pageYOffset > (parseInt(headerH) * 0.6)) {
-
-        whyUs.classList.remove('fade-out');
-
-      }
-    }
-
-
-    $('.brands__carousel').flickity({
-      cellSelector: '.brands__item',
-      wrapAround: true,
-      pageDots: false,
-      autoPlay: 2000,
-      prevNextButtons: false,
-      setGallerySize: false,
-      cellAlign: 'left',
-      imagesLoaded: true,
-      draggable: false
-    });
   }
 
+  // Brands slider options - Flickity.
+
+  $('.brands__carousel').flickity({
+    cellSelector: '.brands__item',
+    wrapAround: true,
+    pageDots: false,
+    autoPlay: 2000,
+    prevNextButtons: false,
+    setGallerySize: false,
+    cellAlign: 'left',
+    imagesLoaded: true,
+    draggable: false
+  });
 });
 
 
 // OPTIONS scripts
 
-const optionButtons = document.querySelectorAll('.options__button');
+$('.options__row').on('click', function () {
+  $('.options__box, .options__box-more').toggleClass('show');
+})
 
-for (let i = 0; i < optionButtons.length; i++) {
-  optionButtons[i].addEventListener('click', function (e) {
-    const clickedBtn = e.target;
-    clickedBtn.nextElementSibling.classList.toggle('js-show');
-  });
-}
+// const optionButtons = document.querySelectorAll('.btn--accordion');
+
+// for (let i = 0; i < optionButtons.length; i++) {
+//   optionButtons[i].addEventListener('click', function (e) {
+//     const clickedBtn = e.target;
+//     clickedBtn.nextElementSibling.classList.toggle('is-visible');
+//   });
+// }
 /* ---- CONTACT-PAGE scripts ---- */
 
 // Maps settings
