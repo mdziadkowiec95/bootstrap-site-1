@@ -9,11 +9,37 @@
     @include fancy-line(0, -5px, 2px, 50px);
   }
 
+  .form-group {
+    padding: .5rem 0;
+  }
   .form-control {
     transition: all .3s ease;
+    padding-left: .5rem;
 
     &:focus:not(select) {
       transform: scale(1.02);
     }
   }
+
+  .form-control {
+    border: none;
+    background: none;
+    border-radius: 0;
+    border-bottom: 2px solid rgba($black, 0.5);
+
+    &:focus {
+      border-radius: 0;
+      border: 0;
+      box-shadow: none;
+      border-bottom: 3px solid rgba($black, 0.5);
+    }
+  }
+}
+
+label {
+  display: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }

@@ -1,4 +1,6 @@
 .contact {
+  background: linear-gradient(rgba($white, 0.9), rgba($white, 0.9)),url(../../images/contact-bg-2.jpg) no-repeat center;
+  background-size: cover;
   padding: 2rem;
 
   &__heading {

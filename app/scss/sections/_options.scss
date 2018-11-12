@@ -22,7 +22,7 @@
     background-color: rgba($black, 0.1);
     box-shadow: 0 0 5px rgba($yellow, 0.4);
     overflow: hidden;
-    transition: all 1s ease;
+    transition: all .5s ease;
 
     &:hover {
       opacity: 0.8;
