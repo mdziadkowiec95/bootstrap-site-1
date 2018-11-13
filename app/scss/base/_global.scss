@@ -11,12 +11,20 @@ html {
 body {
   opacity: 1;
   transition: .3s opacity;
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 body.fade-out {
   opacity: 0;
   transition: none;
 }
 
+main {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
 }
+
+

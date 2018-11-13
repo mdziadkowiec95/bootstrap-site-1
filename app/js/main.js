@@ -64,8 +64,9 @@ $(document).ready(function () {
 
         for (let i = 0; i < children.length; i++) {
           setTimeout(function () {
-            children[i].className += ' is-visible';
+            children[i].className = 'why-us__box is-visible';
             console.log(i);
+            console.log(children[i].className);
           }, i * 700);
         }
       },

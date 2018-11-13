@@ -1,5 +1,146 @@
 .footer {
   min-height: 300px;
   background-image: linear-gradient(to bottom, rgba($black, 0.9), rgba($black, 1));
-  box-shadow: 0 0 7px $black;
+  box-shadow: 0 0 2px $black;
+  position: relative;
+  z-index: 0;
+
+  &__wrapper {
+    @include make-container-max-widths();
+    @include make-container();
+  }
+
+  &__logo {
+    display: block;
+    margin: auto;
+    padding: 1rem 0 0 0;
+    max-width: 100px;
+
+    @include media-breakpoint-up(md) {
+      max-width: 200px;
+    }
+  }
+
+  &__row {
+    @include make-row();
+  }
+
+  &__half {
+    @include make-col-ready();
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+  }
+
+  &__newsletter {
+    padding-top: 1.8rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      @include media-breakpoint-up(sm) {
+        flex-direction: row;
+      }
+
+      .form-control {
+        background-color: rgba($white, 0.8);
+        transition-property: border background-color;
+        transition: .3s ease;
+
+        &:focus {
+          box-shadow: none;
+          border: 2px solid $yellow;
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  &__newsletter-btn {
+    padding: .6rem 1rem;
+
+    &:hover {
+      color: $white; 
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-left: .7rem;
+    }
+  }
+
+  &__heading {
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    @include fancy-line(50%, -10px, 2px, 50px, $white, true);
+
+    @include media-breakpoint-up(md) {
+      margin-top: 3rem;
+    }
+
+  }
+
+  &__socials {
+    text-align: center;
+
+    li {
+      -webkit-transition: opacity .25s ease-in-out,-webkit-transform .25s ease-in-out;
+      transition: opacity .25s ease-in-out,transform .25s ease-in-out;
+      opacity: 1;
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 20px;
+      letter-spacing: 2px;
+
+      &::after {
+        transition: all .2s ease-in-out;
+        width: 50px;
+        height: 50px;
+        content: "";
+        box-shadow: 0 0 0 0 hsla(0,0%,100%,.1);
+        background-color: hsla(0,0%,100%,.05);
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+        border: 0 solid transparent;
+        z-index: 0;
+        transition: all 0.3 ease;
+        transition-delay: .02s;
+      }
+
+      &:hover {
+        opacity: 0.7;
+
+        &::after {
+          box-shadow: 0 0 4px $yellow;
+        }
+      }
+      
+      a {
+        margin: 20px;
+        position: relative;
+        z-index: 1;
+        padding: 0;
+        display: block;
+        color: $yellow;
+      }
+    }
+  }
+}
+
+
+
+.flaticons {
+  display: none;
 }

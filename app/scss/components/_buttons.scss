@@ -1,14 +1,12 @@
 .btn {
   padding: .7rem 1rem;
-  background-color: $yellow;
   color: $black;
   font-family: map-get($fonts, btn), sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  box-shadow: 0 0 2px rgba($black, 0.7);
   border-radius: 5px;
   outline: none;
-  border: none;
+  border: 2px solid $yellow;
   position: relative;
   transition: all 0.3s ease;
 
@@ -19,30 +17,87 @@
     bottom: 0;
     left: 0;
     height: 100%;
-    width: 0;
-    background-color: rgba($black, 0);
-    border-radius: 5px;
+    box-shadow: none;
+    z-index: -1;
     transition: all .3s ease;
   }
 
-  &:hover {
+  &:focus {
+    outline: none;
+    border: 2px solid $yellow;
+  }
+
+  &--primary {
+    background-color: transparent;
+    color: $white;
+
+    &::after {
+      width: 0;
+      background-color: rgba($black, 0);
+    }
+
+    &:hover {
+
+      &::after {
+        width: 100%;
+        background-color: $yellow;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 2px rgba($black, 0.7);
+    }
+
+    &:active {
+      border: 2px solid $yellow;
+    }
+
+   
+  }
+
+  &--secondary {
+    background-color: transparent;
+    z-index: 99999;
     color: $white;
 
     &::after {
       width: 100%;
-      background-color: rgba($black, 0.2);
+      background-color: rgba($yellow, 1);
     }
-  }
 
-  &:focus {
-    box-shadow: 0 0 2px rgba($black, 0.7);
-    outline: none;
-    border: none;
-  }
+    &:hover {
+      color: $black;
+      box-shadow: none;
+      opacity: 0.6;
 
-  &:active:not(.btn--header) {
-    animation: btnPush 0.3s ease;
+      &::after {
+        width: 0;
+        background-color: rgba($yellow, 0);
+        box-shadow: none;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 2px rgba($black, 0.7);
+    }
+
+    &:active {
+      border: 2px solid $yellow;
+      animation: btnPush 1s ease;
+    }
+
   }
+  
+
+
+
+
+
+  // &:active:not(.btn--header) {
+  //   
+  // }
+
+  
 
   &--header {
     position: absolute;
