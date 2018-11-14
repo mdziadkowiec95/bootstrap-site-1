@@ -7189,7 +7189,7 @@ input:-webkit-autofill {
   right: 0;
   z-index: 1030;
   padding: .3rem .3rem .3rem .3rem;
-  background-color: rgba(33, 33, 33, 0.92);
+  background-color: rgba(33, 33, 33, 0.95);
   box-shadow: 0 1px 5px rgba(33, 33, 33, 0.5); }
   @media (min-width: 768px) {
     .navbar {
@@ -7633,6 +7633,12 @@ input:-webkit-autofill {
 .flaticons {
   display: none; }
 
+.options-page {
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(33, 33, 33, 0.9)), url(../../images/options-bg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh; }
+
 .options {
   padding-top: 4rem;
   padding-bottom: 4rem; }
@@ -7641,8 +7647,7 @@ input:-webkit-autofill {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto;
-    overflow: hidden; }
+    margin-left: auto; }
     @media (min-width: 576px) {
       .options__wrapper {
         max-width: 540px; } }
@@ -7662,29 +7667,27 @@ input:-webkit-autofill {
     margin-left: -15px;
     position: relative; }
   .options__box {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(33, 33, 33, 0.1);
-    box-shadow: 0 0 5px rgba(225, 177, 44, 0.4);
-    overflow: hidden;
-    transition: all .5s ease; }
-    .options__box:hover {
-      opacity: 0.8; }
-    .options__box.show {
-      transform: translateX(-100%); }
-  .options__box-more {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 1s ease;
-    transform: translateX(100%); }
-    .options__box-more.show {
-      transform: translateX(0); }
+    box-shadow: 0 0 4px rgba(33, 33, 33, 0.3); }
+
+.accordion {
+  background-color: transparent;
+  overflow: hidden; }
+  .accordion__heading {
+    background-color: rgba(225, 177, 44, 0.9);
+    padding: 1rem;
+    transition: all 0.3s ease;
+    color: #fff; }
+    .accordion__heading:hover {
+      background-color: white;
+      color: #212121; }
+    .accordion__heading h2 {
+      color: inherit;
+      text-align: center; }
+    .accordion__heading p {
+      font-size: 1.3rem; }
+  .accordion__content {
+    background-color: rgba(255, 255, 255, 0.78);
+    overflow: hidden; }
 
 .contact {
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../../images/contact-bg-2.jpg) no-repeat center;

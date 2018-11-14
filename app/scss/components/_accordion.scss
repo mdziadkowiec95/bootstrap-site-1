@@ -1,0 +1,30 @@
+.accordion {
+  background-color: transparent;
+  overflow: hidden;
+
+  &__heading {
+    background-color: rgba($yellow, 0.9);
+    padding: 1rem;
+    transition: all 0.3s ease;
+    color: $white;
+
+    &:hover {
+      background-color: rgba($white, 1);
+      color: $black;
+    }
+
+    h2 {
+      color: inherit;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__content {
+    background-color: rgba($white, 0.78);
+    overflow: hidden;
+  }
+}

@@ -1,6 +1,6 @@
 // navbar-toggler-icon customizing
 
-const navbarToggler = document.querySelector('.navbar-toggler');
+var navbarToggler = document.querySelector('.navbar-toggler');
 
 navbarToggler.addEventListener('click', function () {
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
     var waypoint = new Waypoint({
       element: document.querySelector('.js-wp-1'),
       handler: function (direction) {
-        const children = this.element.children;
+        var children = this.element.children;
         console.log(children);
 
         for (let i = 0; i < children.length; i++) {
@@ -92,16 +92,29 @@ $(document).ready(function () {
 
 
 // OPTIONS scripts
+if (document.body.dataset.page === 'options-page') {
 
-$('.options__row').on('click', function () {
-  $('.options__box, .options__box-more').toggleClass('show');
-})
+  var squeezebox = new Squeezebox({
+    wrapperEl: '.accordion',
+    headersClass: 'accordion__heading',
+    foldersClass: 'accordion__content',
+    closeOthers: true,
+    speed: '.3s'
+  });
+  squeezebox.init();
 
-// const optionButtons = document.querySelectorAll('.btn--accordion');
+}
+
+
+// $('.options__row').on('click', function () {
+//   $('.options__box, .options__box-more').toggleClass('show');
+// })
+
+// var optionButtons = document.querySelectorAll('.btn--accordion');
 
 // for (let i = 0; i < optionButtons.length; i++) {
 //   optionButtons[i].addEventListener('click', function (e) {
-//     const clickedBtn = e.target;
+//     var clickedBtn = e.target;
 //     clickedBtn.nextElementSibling.classList.toggle('is-visible');
 //   });
 // }

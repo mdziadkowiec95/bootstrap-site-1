@@ -16,6 +16,7 @@ var replace = require('gulp-replace');
 var del = require('del');
 var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
+var babel = require('gulp-babel');
 // var extReplace = require('gulp-ext-replace');
 
 
@@ -58,6 +59,7 @@ gulp.task('uncss', function () {
         'app/**/*.html'
       ],
       ignore: [/\w\.in/,
+        /\.is-visible/,
         ".was-validated",
         /\:valid/,
         /\:invalid/,
@@ -132,17 +134,41 @@ gulp.task('uncss', function () {
 //     .pipe(gulp.dest('dist/css/'));
 // });
 
+
+gulp.task('minify-js', () =>
+
+  gulp.src('dist/js/main.min.js')
+    .pipe(babel({
+      presets: [['env', {
+        loose: true,
+        modules: false,
+        exclude: ['transform-es2015-typeof-symbol']
+      }]],
+      plugins: ['transform-es2015-modules-strip', 'transform-object-rest-spread']
+    }))
+    // .pipe(concat('bootstrap.js'))
+    // .pipe(gulp.dest(out))
+    // gulp.src('dist/js/main.min.js')
+    //   .pipe(babel({
+    //     presets: ['es2015']
+    //   }))
+    //   .on('error', console.error.bind(console))
+    //   // .pipe(uglify().on('error', function (e) {
+    //   //   console.log(e);
+    //   // }))
+    .pipe(gulp.dest('dist/js/'))
+);
+
 gulp.task('useref', function () {
   return gulp.src('app/*.html') // scan html's
     .pipe(replace('kontakt.html', 'kontakt.php'))
     .pipe(useref())  // szukaj komentarza build
     // Minifies only if it's a JavaScript file
-    .pipe(gulpIf('*.js', uglify().on('error', function (e) {
-      console.log(e);
-    })))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist')) // wyrzuć go w 'dist'
 });
+
+
 
 gulp.task('images', function () {
   return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
@@ -173,7 +199,7 @@ gulp.task('clean:dist', function () {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('clean:dist', 'sass', 'uncss', 'useref', 'images', 'fonts', 'copy', 'copy-as-php',
+  runSequence('clean:dist', 'sass', 'uncss', 'useref', 'minify-js', 'images', 'fonts', 'copy', 'copy-as-php',
     callback
   )
 });
