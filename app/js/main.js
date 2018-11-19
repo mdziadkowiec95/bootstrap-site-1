@@ -7,7 +7,8 @@ navbarToggler.addEventListener('click', function () {
   if (navbarToggler.nextElementSibling.classList.contains('collapsing')) {
     return false;
   } else {
-    this.classList.toggle('js-active');
+    console.log(navbarToggler.childNodes[1]);
+    navbarToggler.childNodes[1].classList.toggle('js-open');
   }
 
 });
@@ -99,7 +100,13 @@ if (document.body.dataset.page === 'options-page') {
     headersClass: 'accordion__heading',
     foldersClass: 'accordion__content',
     closeOthers: true,
-    speed: '.3s'
+    speed: '.25s',
+    onOpen: function (wrapper, clickedHeader, content) {
+      clickedHeader.classList.add('open');
+    },
+    onClose: function (wrapper, clickedHeader, content) {
+      clickedHeader.classList.remove('open');
+    },
   });
   squeezebox.init();
 
