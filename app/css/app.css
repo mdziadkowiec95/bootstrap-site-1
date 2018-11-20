@@ -6729,8 +6729,6 @@ input:-webkit-autofill {
     .btn--header:active {
       animation: btnHeaderPush 0.3s ease; }
   .btn--accordion {
-    display: block;
-    width: 100%;
     border: 2px solid #fff; }
 
 @keyframes btnPush {

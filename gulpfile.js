@@ -17,10 +17,17 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
 var babel = require('gulp-babel');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
 // var extReplace = require('gulp-ext-replace');
 
 
-
+// gulp.task('js', () => {
+//   gulp.src('./app/js/main.js')
+//     .pipe(webpackStream(webpackConfig), webpack)
+//     .pipe(gulp.dest('./dist/js'));
+// });
 
 
 gulp.task('sass', function () {
