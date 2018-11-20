@@ -22,13 +22,12 @@
     }
   }
   &-item {
-    position: relative;
     height: 100vh; 
     min-height: 600px; 
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover;
-    transition-duration: 1.5s;
+    
 
     @include media-breakpoint-up(sm) {
       height: 60vh;

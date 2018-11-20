@@ -44,10 +44,30 @@
   }
 
   .navbar-toggler {
-    // border:1px solid $white;
+    position: relative;
     width: 55px;
     height: 50px;
     padding: 0;
+
+    &.js-open {
+      background: none;
+
+      .navbar-toggler-icon {
+        background: none;
+      
+          &::before {
+            transform: rotate(45deg) translate(13px, 16px);
+            transform-origin: 36px;
+            background-color: $yellow;
+          }
+  
+          &::after {
+            transform: rotate(-45deg) translate(12px, -16px);
+            transform-origin: 36px;
+            background-color: $yellow;
+          }
+      }
+    }
 
     &:focus {
       outline: 0;
@@ -68,6 +88,7 @@
         position: absolute;
         height: 5px;
         width: 50px;
+        border-radius: 2px;
         left: 0;
         background-color: $white;
         transition: all .3s ease;
@@ -79,23 +100,6 @@
 
       &::after {
         top: 12px;
-      }
-
-      &.js-open {
-        
-
-        &::before {
-          
-          transform: rotate(45deg) translate(13px, 16px);
-          transform-origin: 36px;
-          
-        }
-
-        &::after {
-          
-          transform: rotate(-45deg) translate(12px, -16px);
-          transform-origin: 36px;
-        }
       }
     }
   }

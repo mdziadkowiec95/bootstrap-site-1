@@ -7,8 +7,8 @@ navbarToggler.addEventListener('click', function () {
   if (navbarToggler.nextElementSibling.classList.contains('collapsing')) {
     return false;
   } else {
-    console.log(navbarToggler.childNodes[1]);
-    navbarToggler.childNodes[1].classList.toggle('js-open');
+    console.log(navbarToggler);
+    navbarToggler.classList.toggle('js-open');
   }
 
 });

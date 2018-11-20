@@ -17,6 +17,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
 var babel = require('gulp-babel');
+var autoprefixer = require('gulp-autoprefixer');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
@@ -33,6 +34,10 @@ const webpackConfig = require('./webpack.config.js');
 gulp.task('sass', function () {
   return gulp.src('app/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
