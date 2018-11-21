@@ -53,11 +53,11 @@ $(document).ready(function () {
   });
 
 
-  // Front Page Waypoint
+  // Front Page Waypoints
 
   if (document.body.classList.contains('front-page')) {
 
-    var waypoint = new Waypoint({
+    var waypoint_why_us = new Waypoint({
       element: document.querySelector('.js-wp-1'),
       handler: function (direction) {
         var children = this.element.children;
@@ -72,7 +72,53 @@ $(document).ready(function () {
         }
       },
       offset: '50%'
+    });
+
+    var waypoint_about_us = new Waypoint({
+      element: document.querySelector('.js-wp-2'),
+      handler: function (direction) {
+        this.element.classList.add('js-show');
+        document.querySelector('.about-us__image').classList.add('js-show');
+      },
+      offset: '70%'
     })
+
+
+
+    var waypoint_counters = new Waypoint({
+      element: document.querySelector('.js-wp-3'),
+      handler: function (direction) {
+
+        var options = {
+          useEasing: true,
+          useGrouping: true,
+          separator: ',',
+          decimal: '.',
+        };
+
+        var counters = {
+          counter_1: new CountUp('counter-1', 0, 54, 0, 5, options),
+          counter_2: new CountUp('counter-2', 0, 1524, 0, 5, options),
+          counter_3: new CountUp('counter-3', 0, 5245, 0, 5, options),
+          counter_4: new CountUp('counter-4', 0, 15132, 0, 5, options)
+        }
+
+        for (var counter in counters) {
+          if (!counter.error) {
+            counters[counter].start();
+          } else {
+            console.error(counters[counter]);
+          }
+        }
+
+
+      },
+      offset: '70%'
+    })
+
+
+
+
 
   }
 

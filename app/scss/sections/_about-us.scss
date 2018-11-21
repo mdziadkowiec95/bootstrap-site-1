@@ -1,0 +1,48 @@
+.about-us {
+  &__wrapper {
+    @include make-container();
+    @include make-container-max-widths();
+
+  }
+
+  &__row {
+    @include make-row();
+  }
+
+  &__content {
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+    
+
+    transform: translateX(-50vw) scale(0.5);
+    opacity: 0;
+    transition: all 2.5s ease;
+
+    &.js-show {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  &__paragraph {
+    text-align: justify;
+  }
+
+  &__image-box {
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+  }
+
+  &__image {
+    transform: translateX(50vw) scale(0.5);
+    opacity: 0;
+    transition: all 2.5s ease;
+
+    &.js-show {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+}
