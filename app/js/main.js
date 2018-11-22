@@ -1,5 +1,21 @@
 // navbar-toggler-icon customizing
 
+var navbar = document.querySelector('.navbar');
+var navbarLogo = document.querySelector('.navbar-brand__image');
+
+window.addEventListener('scroll', function (e) {
+  if (window.pageYOffset !== 0) {
+
+    navbar.classList.add('js-fixed-top');
+
+  } else {
+
+    navbar.classList.remove('js-fixed-top');
+
+  }
+})
+
+
 var navbarToggler = document.querySelector('.navbar-toggler');
 
 navbarToggler.addEventListener('click', function () {
@@ -9,6 +25,7 @@ navbarToggler.addEventListener('click', function () {
   } else {
     console.log(navbarToggler);
     navbarToggler.classList.toggle('js-open');
+    navbar.classList.toggle('js-open');
   }
 
 });
@@ -89,6 +106,9 @@ $(document).ready(function () {
       element: document.querySelector('.js-wp-3'),
       handler: function (direction) {
 
+        this.element.classList.add('js-show');
+        this.element.classList.remove('js-wp-3');
+
         var options = {
           useEasing: true,
           useGrouping: true,
@@ -97,15 +117,19 @@ $(document).ready(function () {
         };
 
         var counters = {
-          counter_1: new CountUp('counter-1', 0, 54, 0, 5, options),
-          counter_2: new CountUp('counter-2', 0, 1524, 0, 5, options),
-          counter_3: new CountUp('counter-3', 0, 5245, 0, 5, options),
-          counter_4: new CountUp('counter-4', 0, 15132, 0, 5, options)
+          counter_1: new CountUp('js-counter-1', 0, 21, 0, 2, options),
+          counter_2: new CountUp('js-counter-2', 0, 34, 0, 3, options),
+          counter_3: new CountUp('js-counter-3', 0, 17234, 0, 4, options),
+          counter_4: new CountUp('js-counter-4', 0, 61242, 0, 5, options)
         }
 
+        var notStarted = true;
+
         for (var counter in counters) {
-          if (!counter.error) {
-            counters[counter].start();
+          if (!counter.error && notStarted) {
+            counters[counter].start(function () {
+              waypoint_counters.destroy();
+            });
           } else {
             console.error(counters[counter]);
           }
@@ -138,25 +162,7 @@ $(document).ready(function () {
 });
 
 
-// OPTIONS scripts
-if (document.body.dataset.page === 'options-page') {
-
-  var squeezebox = new Squeezebox({
-    wrapperEl: '.accordion',
-    headersClass: 'accordion__heading',
-    foldersClass: 'accordion__content',
-    closeOthers: true,
-    speed: '.25s',
-    onOpen: function (wrapper, clickedHeader, content) {
-      clickedHeader.classList.add('open');
-    },
-    onClose: function (wrapper, clickedHeader, content) {
-      clickedHeader.classList.remove('open');
-    },
-  });
-  squeezebox.init();
-
-}
+// OPTIONS script
 
 
 // $('.options__row').on('click', function () {

@@ -9,7 +9,12 @@
   &__carousel {
     position: relative;
     overflow: hidden;
-    height: 200px;
+    height: 100px;
+    
+    @include media-breakpoint-up(md) {
+      height: 150px;
+    }
+    
 
     &::after {
       position: absolute;
@@ -44,5 +49,10 @@
   &__image {
       display: block;
       margin: auto;
+      height: 80px;
+
+      @include media-breakpoint-up(md) {
+        height: auto;
+      }
   }
 }
