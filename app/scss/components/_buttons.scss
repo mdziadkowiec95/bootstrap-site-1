@@ -9,7 +9,7 @@
   border: 2px solid $yellow;
   position: relative;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  // transition: all 0.3s ease;
 
   &::after {
     display: block;
@@ -20,7 +20,7 @@
     height: 100%;
     box-shadow: none;
     z-index: -1;
-    transition: all .3s ease;
+    transition: all .2s ease;
   }
 
   &:focus {

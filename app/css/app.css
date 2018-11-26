@@ -4239,7 +4239,7 @@ a.text-dark:hover, a.text-dark:focus {
   .dropdown-item:hover, .dropdown-item:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #212121; }
+    background-color: #e1b12c; }
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
@@ -7471,9 +7471,7 @@ input:-webkit-autofill {
   outline: none;
   border: 2px solid #e1b12c;
   position: relative;
-  white-space: nowrap;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  white-space: nowrap; }
   .btn::after {
     display: block;
     content: '';
@@ -7484,8 +7482,8 @@ input:-webkit-autofill {
     -webkit-box-shadow: none;
     box-shadow: none;
     z-index: -1;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease; }
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease; }
   .btn:focus {
     outline: none;
     border: 2px solid #e1b12c; }

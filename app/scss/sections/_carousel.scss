@@ -21,6 +21,7 @@
       transform: scale(1.2);
     }
   }
+  
   &-item {
     height: 100vh; 
     min-height: 600px;
@@ -28,7 +29,7 @@
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover;
-    
+  
 
     @include media-breakpoint-up(sm) {
       height: 60vh;
